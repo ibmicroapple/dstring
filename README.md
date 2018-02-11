@@ -14,6 +14,8 @@ Just copy dstring.h to your include directory and include it in your project. No
 Usage
 -----
 
+For a quick start you may want to take a look at the simple [example](https://github.com/ibmicroapple/dstring/blob/master/example.c).
+
 Set
 ```
 int string_set(String *p_string, const char * const p_text);
