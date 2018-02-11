@@ -40,6 +40,8 @@ int string_replacec(String *p_string, const char p_old, const char p_new);
 int string_compare(String *p_string1, String *p_string2);
 int string_getline(String *p_string, FILE *p_stream);
 int string_readfile(String *p_string, const char *filename);
+int string_tolower(String *p_string);
+int string_toupper(String *p_string);
 void string_clear(String *p_string);
 
 int string_set(String *p_string, const char * const p_text)
@@ -549,6 +551,34 @@ void string_clear (String * p_string)
 	}
 
 	p_string->length = p_string->size = 0;
+}
+
+int string_tolower(String *p_string)
+{
+	char *cptr;
+
+	if(!p_string->c_str) return(STRING_ERR);
+
+	for(cptr = p_string->c_str; *cptr; cptr++)
+	{
+		tolower(cptr);
+	}
+
+	return(STRING_OK);
+}
+
+int string_toupper(String *p_string)
+{
+	char *cptr;
+
+	if(!p_string->c_str) return(STRING_ERR);
+
+	for(cptr = p_string->c_str; *cptr; cptr++)
+	{
+		toupper(cptr);
+	}
+
+	return(STRING_OK);
 }
 
 #endif /* DSTRING_H */
