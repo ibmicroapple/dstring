@@ -5,6 +5,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdarg.h>
+#include <ctype.h>
 
 #define STRING_NULL (String){0}
 #define STRING_OK 0
