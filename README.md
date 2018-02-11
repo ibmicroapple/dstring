@@ -1,5 +1,4 @@
 # dstring
-========================
 ## Dynamic string library, ANSI C 89
 
 About
@@ -17,7 +16,7 @@ Any contribution is highly appreciated. The best way to contribute is to open a 
 
 License
 -------
-[MIT]
+[MIT](https://github.com/ibmicroapple/dstring/blob/master/LICENSE)
 
 Copyright
 ---------
