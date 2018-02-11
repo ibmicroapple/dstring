@@ -32,6 +32,7 @@ Insert
 
 =======
 Set
+```
 `int string_set(String *p_string, const char * const p_text);`
 `int string_setn(String *p_string, const char * const p_text, const size_t length);`
 `int string_setf(String *p_string, const char * const p_format, ...);`
