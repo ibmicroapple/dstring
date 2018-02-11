@@ -31,10 +31,10 @@ Del
 Insert
 
 =======
-```
-int string_set(String *p_string, const char * const p_text);
-int string_setn(String *p_string, const char * const p_text, const size_t length);
-int string_setf(String *p_string, const char * const p_format, ...);
+Set
+`int string_set(String *p_string, const char * const p_text);`
+`int string_setn(String *p_string, const char * const p_text, const size_t length);`
+`int string_setf(String *p_string, const char * const p_format, ...);`
 int string_setfva(String *p_string, const char * const p_format, va_list va_args, const size_t length);
 int string_setc(String *p_string, const char ch);
 int string_add(String *p_string, const char * const p_text);
