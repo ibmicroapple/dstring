@@ -14,19 +14,8 @@ Just copy dstring.h to your include directory and include it in your project. No
 Usage
 -----
 
-<!--ts-->
-	* [Set](#set)
-	* [Add](#add)
-	* [Del](#del)
-	* [Insert](#insert)
-	* [Remove](#remove)
-	* [Replace](#replace)
-	* [misc](#misc)
-<!--te-->
-
 Set
----
-- string_set
+- ```string_set```
 - string_setn
 - string_setf
 - string_setfva
