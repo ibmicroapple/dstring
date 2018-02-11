@@ -1,4 +1,12 @@
+/* This serves as a simple example on how to use the
+ * dynamic strings provided by dstring.h
+ */
+
 #include "dstring.h"
+
+/* Prints a string to the console by calling puts
+ * on the actual cstring contained within a string object.
+ */
 
 #define string_print(p_string) puts(((String*)p_string)->c_str)
 
@@ -41,7 +49,17 @@ int main()
 	 * you need to call it multiple times (until STRING_ERR is returned).
 	 */
 
-	string_replace(&myLocalString, "world", "humans");
+	string_replace(&myLocalString, "world", "errors");
+
+	string_print(&myLocalString);
+
+	/* If we forgot to add something, we can simply insert snippets of
+	 * text afterwards by using the insert function.
+	 */
+
+	size_t position = strstr(myLocalString.c_str, "errors") - myLocalString.c_str;
+
+	string_insert(&myLocalString, position, "runtime ");
 
 	string_print(&myLocalString);
 
