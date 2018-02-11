@@ -40,7 +40,7 @@ int string_delc(String *p_string);
 int string_remove(String *p_string, const size_t p_pos, const size_t length);
 ```
 
-*Insert*
+**Insert**
 ```
 int string_insert(String *p_string, const size_t p_pos, const char * const p_text);
 int string_insertn(String *p_string, const size_t p_pos, const char * const p_text, const size_t length);
