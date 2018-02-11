@@ -562,7 +562,7 @@ int string_tolower(String *p_string)
 
 	for(cptr = p_string->c_str; *cptr; cptr++)
 	{
-		tolower(cptr);
+		*cptr = tolower(*cptr);
 	}
 
 	return(STRING_OK);
@@ -576,7 +576,7 @@ int string_toupper(String *p_string)
 
 	for(cptr = p_string->c_str; *cptr; cptr++)
 	{
-		toupper(cptr);
+		*cptr = toupper(*cptr);
 	}
 
 	return(STRING_OK);
