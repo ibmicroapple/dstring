@@ -16,7 +16,7 @@ Usage
 
 For a quick start you may want to take a look at the simple [example](https://github.com/ibmicroapple/dstring/blob/master/example.c).
 
-Set
+*Set*
 ```
 int string_set(String *p_string, const char * const p_text);
 int string_setn(String *p_string, const char * const p_text, const size_t length);
@@ -25,7 +25,7 @@ int string_setfva(String *p_string, const char * const p_format, va_list va_args
 int string_setc(String *p_string, const char ch);
 ```
 
-Add
+*Add*
 ```
 int string_add(String *p_string, const char * const p_text);
 int string_addn(String *p_string, const char * const p_text, const size_t length);
@@ -34,13 +34,13 @@ int string_addfva(String *p_string, const char * const p_format, va_list va_args
 int string_addc(String *p_string, const char ch);
 ```
 
-Delete
+*Delete*
 ```
 int string_delc(String *p_string);
 int string_remove(String *p_string, const size_t p_pos, const size_t length);
 ```
 
-Insert
+*Insert*
 ```
 int string_insert(String *p_string, const size_t p_pos, const char * const p_text);
 int string_insertn(String *p_string, const size_t p_pos, const char * const p_text, const size_t length);
@@ -49,13 +49,13 @@ int string_insertfva(String *p_string, const size_t p_pos, const char * const p_
 int string_insertc(String *p_string, const size_t p_pos, const char ch);
 ```
 
-Replace
+*Replace*
 ```
 int string_replace(String *p_string, const char * const p_old, const char * const p_new);
 int string_replacec(String *p_string, const char p_old, const char p_new);
 ```
 
-Misc
+*Misc*
 ```
 int string_compare(String *p_string1, String *p_string2);
 int string_getline(String *p_string, FILE *p_stream);
