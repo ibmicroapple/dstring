@@ -3,15 +3,53 @@
  */
 
 #include "dstring.h"
+#include <locale.h>
 
 /* Prints a string to the console by calling puts
  * on the actual cstring contained within a string object.
  */
 
-#define string_print(p_string) puts(((String*)p_string)->c_str)
+void wmain()
+{
+	setlocale(LC_CTYPE, "en_US.UTF-8");
+
+	WString myLocalString = WSTRING_NULL;
+
+
+	wstring_set(&myLocalString, L"Hello World²");
+	wstring_print(&myLocalString);
+
+
+	wstring_add(&myLocalString, L" Goodbye cruel world!");
+	wstring_print(&myLocalString);
+
+
+	wstring_addc(&myLocalString, L'X');
+	wstring_print(&myLocalString);
+
+	wstring_clear(&myLocalString);
+}
+
+void lev()
+{
+	WString str1 = WSTRING_NULL;
+	WString str2 = WSTRING_NULL;
+
+	wstring_set(&str1, L"Helö");
+	wstring_set(&str2, L"Hello");
+
+	printf("%d\n", wstring_levenshtein(&str1, &str2));
+
+	wstring_clear(&str1);
+	wstring_clear(&str2);
+}
 
 int main()
 {
+//	wmain();
+	lev();
+	return(0);
+
 	/* When creating a new object of type String we do always need
 	 * to initialize it with zero.
 	 * You do need to do this for both heap- and stack-allocated strings!
