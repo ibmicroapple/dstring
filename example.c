@@ -57,15 +57,13 @@ void example_string()
 	 */
 
 	string_set(&myLocalString, "Hello World!");
-
 	string_print(&myLocalString);
 
 	/* We can now continue working on the string by dynamically adding
 	 * more text to it.
 	 */
 
-	string_add(&myLocalString, " Goodbye cruel world!");
-
+	string_add(&myLocalString, " Goodbye world!");
 	string_print(&myLocalString);
 
 	/* We may even use printf-like formatting when adding text to a
@@ -73,7 +71,6 @@ void example_string()
 	 */
 
 	string_addf(&myLocalString, " Dynamic %s are awesome!", "strings");
-
 	string_print(&myLocalString);
 
 	/* Maybe we do not like some phrases contained within a string.
@@ -84,7 +81,6 @@ void example_string()
 	 */
 
 	string_replace(&myLocalString, "world", "errors");
-
 	string_print(&myLocalString);
 
 	/* If we forgot to add something, we can simply insert snippets of
@@ -92,9 +88,7 @@ void example_string()
 	 */
 
 	size_t position = strstr(myLocalString.c_str, "errors") - myLocalString.c_str;
-
 	string_insert(&myLocalString, position, "runtime ");
-
 	string_print(&myLocalString);
 
 	/* When we are done working with a string, we need to clear it.

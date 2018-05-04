@@ -1,5 +1,5 @@
 # dstring
-## Dynamic string library, ANSI C 89
+## Dynamic string library, ANSI C 89, unicode / utf-8 support
 
 Description
 -----------
@@ -16,7 +16,7 @@ For a quick start you may want to take a look at the simple [example](https://gi
 
 Common Mistakes
 ---------------
-- Before working with unicode you should have set the correct locale. An example is given in the example.
+- Before working with unicode you may need to set the correct locale. An example is given in the example.
 - Before using an object of type String or WString you MUST initialize it with zero.
 - Calling a unicode function on a normal string or vice versa
 

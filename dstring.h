@@ -57,6 +57,7 @@ int string_toupper(String *p_string);
 int string_levenshtein(String *p_string1, String *p_string2);
 void string_clear(String *p_string);
 int string_towstring(WString *p_wstring, String *p_string);
+int string_getpos(String *p_string);
 
 int wstring_set(WString *p_string, const wchar_t * const p_text);
 int wstring_setn(WString *p_string, const wchar_t * const p_text, const size_t length);
@@ -716,6 +717,16 @@ int string_towstring(WString *p_wstring, String *p_string)
 	p_wstring->w_str[p_wstring->length] = L'\0';
 
 	return(STRING_OK);
+}
+
+int string_getpos(String *p_string, const char * const p_text)
+{
+	if(!p_string->c_str) return(STRING_ERR);
+
+	/* On success a positive value is returned, indicating the position of p_text.
+	 * On an error a negative value is returned.
+	 */
+	return(strstr(p_string->c_str, p_text) - p_string->c_str);
 }
 
 /* WString functions */
