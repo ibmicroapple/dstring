@@ -57,7 +57,7 @@ int string_toupper(String *p_string);
 int string_levenshtein(String *p_string1, String *p_string2);
 void string_clear(String *p_string);
 int string_towstring(WString *p_wstring, String *p_string);
-int string_getpos(String *p_string);
+int string_getpos(String *p_string, const char * const p_text);
 
 int wstring_set(WString *p_string, const wchar_t * const p_text);
 int wstring_setn(WString *p_string, const wchar_t * const p_text, const size_t length);
@@ -87,6 +87,7 @@ int wstring_levenshtein(WString *p_string1, WString *p_string2);
 void wstring_clear(WString *p_string);
 int wstring_tostring(String *p_string, WString *p_wstring);
 int wstring_frommb(WString *p_string, const char * const p_text);
+int wstring_getpos(WString *p_string, const wchar_t * const p_text);
 
 int cstr_levenshtein(const char * const p_cstr1, const char * const p_cstr2);
 int wstr_levenshtein(const wchar_t * const p_wstr1, const wchar_t * const p_wstr2);
@@ -1470,6 +1471,13 @@ int wstr_levenshtein(const wchar_t * const p_wstr1, const wchar_t * const p_wstr
 	}
 
 	return(d[n][m]);
+}
+
+int wstring_getpos(WString *p_string, const wchar_t * const p_text)
+{
+	if(!p_string->w_str) return(STRING_ERR);
+
+	return(wcsstr(p_string->w_str, p_text) - p_string->w_str);
 }
 
 #endif /* DSTRING_H */
