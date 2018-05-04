@@ -9,7 +9,7 @@
  * on the actual cstring contained within a string object.
  */
 
-void wmain()
+void example_wstring()
 {
 	setlocale(LC_CTYPE, "en_US.UTF-8");
 
@@ -44,12 +44,8 @@ void lev()
 	wstring_clear(&str2);
 }
 
-int main()
+void example_string()
 {
-//	wmain();
-	lev();
-	return(0);
-
 	/* When creating a new object of type String we do always need
 	 * to initialize it with zero.
 	 * You do need to do this for both heap- and stack-allocated strings!
@@ -107,6 +103,15 @@ int main()
 	 */
 
 	string_clear(&myLocalString);
+}
+
+int main()
+{
+	/* showcase standard string functions */
+	example_string();
+
+	/* showcase wide-string functions */
+	example_wstring();
 
 	return(0);
 }
